@@ -4,6 +4,7 @@ const members = {
     name: "橘 陽菜（ひな）",
     type: "王道アイドル感・圧倒的キラキラ感",
     desc: "圧倒的なアイドル性と輝きに惹かれるあなたには『ひな』がぴったり！眩しい笑顔とストレートな情熱で、いつでも最高のワクワクを届けてくれる存在です。",
+	img: "images/hina.jpg",
     color: "#fff59d",       // パステルイエロー
     textColor: "#f57f17",  // テキスト用アクセント色
     borderColor: "#ffee58"
@@ -12,6 +13,7 @@ const members = {
     name: "橋本 恵菜（めぐな）",
     type: "大人っぽい雰囲気・陰の努力家",
     desc: "落ち着いた魅力と秘めた情熱に惹かれるあなたには『めぐな』がぴったり！見えないところで努力を重ねる真摯な姿に、知れば知るほど沼にハマっていくはずです。",
+	img: "images/meguna.jpg",
     color: "#c8e6c9",       // パステルグリーン
     textColor: "#2e7d32",
     borderColor: "#a5d6a7"
@@ -20,6 +22,7 @@ const members = {
     name: "鹿野 ななみ（ななみ）",
     type: "明るく太陽のような存在・頼れるしっかり者",
     desc: "太陽のような明るさと安心感に惹かれるあなたには『ななみ』がぴったり！一緒にいるだけで元気がもらえて、いざという時は頼りになる頼もしい存在です。",
+	img: "images/nanami.jpg",
     color: "#fce4ec",       // パステルピンク（背景色）
     textColor: "#c2185b",   // 濃いピンク（文字色・見やすさ重視）
     borderColor: "#f8bbd0"  // 少し濃いめのピンク（枠線色）
@@ -28,6 +31,7 @@ const members = {
     name: "黒崎 萌（もえ）",
     type: "真面目で誠実・しっかり者で頼もしい",
     desc: "誠実さや温かい気配りに惹かれるあなたには『もえ』がぴったり！どんな時も丁寧にファンやグループと向き合う姿に、深い信頼と安心感を感じられます。",
+	img: "images/moe.jpg",
     color: "#ffcdd2",       // パステルレッド/ピンク
     textColor: "#c62828",
     borderColor: "#ef9a9a"
@@ -36,6 +40,7 @@ const members = {
     name: "葉山 雫（しずく）",
     type: "あざと可愛く憎めない・愛され上手",
     desc: "愛嬌たっぷりの可愛さにキュンとするあなたには『しずく』がぴったり！ちょっとあざといおねだりや甘え上手な姿に、思わず夢中になってしまう魅力があります。",
+	img: "images/shizuku.jpg",
     color: "#b3e5fc",       // パステル水色
     textColor: "#0277bd",
     borderColor: "#81d4fa"
@@ -44,6 +49,7 @@ const members = {
     name: "真白 美央（みお）",
     type: "圧倒的ビジュアル・愛される天然ギャップ",
     desc: "美しいビジュアルと予想外のギャップに惹かれるあなたには『みお』がぴったり！完璧な見た目からは想像できないマイペースな天然っぷりに、ずっと癒やされます。",
+	img: "images/mio.jpg",
     color: "#e1bee7",       // パステルパープル
     textColor: "#6a1b9a",
     borderColor: "#ce93d8"
@@ -165,6 +171,11 @@ function showResult() {
   const highestMember = topMembers[randomIndex];
   
   currentResultMember = members[highestMember];
+
+  // ★ ここで画像をセット
+  const imgElem = document.getElementById('result-img');
+  imgElem.src = currentResultMember.img;
+  imgElem.alt = currentResultMember.name;
   
   // 結果カードの動的着色
   const card = document.getElementById('result-card');

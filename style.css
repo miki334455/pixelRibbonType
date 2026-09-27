@@ -101,6 +101,16 @@ h1 {
   transition: all 0.3s ease;
 }
 
+.result-img {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  border-radius: 16px;
+  margin-bottom: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
 .result-name {
   font-size: 24px;
   font-weight: bold;
