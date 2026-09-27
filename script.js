@@ -202,5 +202,14 @@ function shareOnX() {
   );
   const url = encodeURIComponent(window.location.href);
   const shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
-  window.open(shareUrl, '_blank');
+  // スマホ端末（iOS / Android）かどうかの判定
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+  if (isMobile) {
+    // スマホの場合は同一画面遷移にすることで、OSが自動的にXアプリを起動します
+    window.location.href = shareUrl;
+  } else {
+    // PCの場合は今まで通り新しいタブで開きます
+    window.open(shareUrl, '_blank');
+  }
 }
