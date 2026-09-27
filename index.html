@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixel Ribbon メンバー相性診断</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <!-- スタート画面 -->
+  <div id="start-screen">
+    <h1>Pixel Ribbon<br>メンバー相性診断</h1>
+    <p class="subtitle">ライブや日常の好きなシチュエーションを選ぶだけ！<br>あなたと一番相性がぴったりのメンバーを診断します♪</p>
+    <button class="action-btn restart-btn" onclick="startQuiz()">診断をはじめる</button>
+  </div>
+
+  <!-- 質問画面 -->
+  <div id="quiz-screen" class="hidden">
+    <div id="progress" class="progress-bar"></div>
+    <div id="question-text" class="question-title"></div>
+    <div id="options-container"></div>
+  </div>
+
+  <!-- 結果画面 -->
+  <div id="result-screen" class="hidden">
+    <p style="margin: 0; color: #888; font-size: 13px;">あなたと一番相性が良いのは…</p>
+    
+    <div id="result-card" class="result-card">
+      <div id="result-name" class="result-name"></div>
+      <div id="result-type" class="result-type"></div>
+      <div id="result-desc" class="result-desc"></div>
+    </div>
+
+    <!-- X (Twitter) シェアボタン -->
+    <button class="action-btn share-btn" onclick="shareOnX()">
+      <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+      </svg>
+      結果をXでシェアする
+    </button>
+
+    <button class="action-btn restart-btn" onclick="startQuiz()" style="margin-top: 10px;">もう一度診断する</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
